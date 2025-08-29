@@ -10,7 +10,15 @@
     <script>
         // بررسی وضعیت ورود کاربر و هدایت به صفحه مناسب
         window.onload = function() {
-            window.location.href = "login.html";
+            // بررسی اگر کاربر قبلاً وارد شده است
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn === 'true') {
+                // هدایت مستقیم به سایت خارجی
+                window.location.href = 'https://finalone-theta.vercel.app';
+            } else {
+                // هدایت به صفحه ورود
+                window.location.href = 'login.html';
+            }
         };
     </script>
 </body>
